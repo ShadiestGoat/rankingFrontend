@@ -55,7 +55,7 @@
             await updateStake(true)
         }
 
-        const ws = new WebSocket(`ws://${API_BASE_ORIGIN}/api/ws`)
+        const ws = new WebSocket(`ws://${API_BASE_ORIGIN ? API_BASE_ORIGIN : location.host}/api/ws`)
 
         ws.onmessage = async function (e) {
             const eventData:{event:string, data:Record<string, unknown>} = JSON.parse(e.data)
