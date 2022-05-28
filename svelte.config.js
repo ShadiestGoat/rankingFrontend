@@ -21,9 +21,11 @@ const config = {
 			fallback: null,
 			precompress: true
 		}),
-	
 		prerender: {
 		  default: true
+		},
+		browser: {
+			router: true,
 		}
 	}
 };
