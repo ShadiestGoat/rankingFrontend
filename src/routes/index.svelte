@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { animateNumber, API_BASE, API_BASE_ORIGIN, CHANGE_TIME, type match, AdminPass } from "../stores";
+    import { animateNumber, API_BASE, API_BASE_ORIGIN, CHANGE_TIME, type match, AdminPass, API_PROTCOL } from "../stores";
     import { onMount } from "svelte";
     import Profile from "../lib/profile.svelte";
     import { writable } from "svelte/store";
@@ -55,7 +55,7 @@
             await updateStake(true)
         }
 
-        const ws = new WebSocket(`wss://${API_BASE_ORIGIN ? API_BASE_ORIGIN : location.host}/api/ws`)
+        const ws = new WebSocket(`${API_PROTCOL != "https" ? "ws" : "wss"}://${API_BASE_ORIGIN ? API_BASE_ORIGIN : location.host}/api/ws`)
 
         ws.onmessage = async function (e) {
             const eventData:{event:string, data:Record<string, unknown>} = JSON.parse(e.data)
