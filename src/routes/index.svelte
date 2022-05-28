@@ -38,8 +38,8 @@
         screenWidth = window.innerWidth
         
         adminPass = AdminPass()
-        const resp = await fetch(API_BASE + "/match/")
         console.log(API_BASE + "/match/")
+        const resp = await fetch(API_BASE + "/match/")
 
         if (resp.status == 400) {
             const data = await resp.json()
