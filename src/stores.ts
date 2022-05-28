@@ -22,7 +22,7 @@ export const animateNumber = (oldNum:number, newNum:number, store:Writable<numbe
 export const API_BASE_ORIGIN = process.env.API_BASE_ORIGIN
 export const API_PROTCOL = process.env.API_PROTCOL
 
-export const API_BASE = `${API_PROTCOL == "" ? "" : API_PROTCOL + "://"}${API_BASE_ORIGIN}/api`
+export const API_BASE = `${!API_PROTCOL ? "" : API_PROTCOL + "://"}${API_BASE_ORIGIN ?? ""}/api`
 
 export const ADMIN_KEY = "asdsad"
 
