@@ -2,7 +2,7 @@
     import NotReady from "$lib/notReady.svelte";
     import { AdminPass, API_BASE, type player } from "../stores";
     import { onMount } from "svelte";
-import Btn from "$lib/btn.svelte";
+    import Btn from "$lib/btn.svelte";
     
     let ready = false
     let adminPass = ""

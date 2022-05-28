@@ -26,7 +26,8 @@ const config = {
 		},
 		browser: {
 			router: true,
-		}
+		},
+		trailingSlash: "always"
 	}
 };
 
