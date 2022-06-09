@@ -59,6 +59,7 @@ import { onMount } from "svelte";
         border-radius: 6.25px;
         margin-bottom: 5vh;
         transition: box-shadow 0.5s, background 0.5s;
+        min-height: 45px;
     }
     .color-inidicator:hover:not(:disabled) {
         cursor: pointer;
