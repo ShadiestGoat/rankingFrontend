@@ -24,7 +24,7 @@ import { onMount } from "svelte";
         justify-content: space-around;
     }
     .username {
-        font-size: 3.5rem;
+        font-size: 2.4rem;
         line-height: 1.4;
     }
     .elo {

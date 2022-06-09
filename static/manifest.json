@@ -1,0 +1,9 @@
+{
+  "name": "Shady Ranker",
+  "short_name": "Ranker",
+  "description": "Fencing Ranker",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "theme_color": "#6d10ff",
+  "background_color": "#202124"
+}
