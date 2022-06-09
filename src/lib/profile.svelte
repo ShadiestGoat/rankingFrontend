@@ -35,7 +35,7 @@ import { onMount } from "svelte";
     }
     .score {
         /* margin-top: 3vh; */
-        font-size: 13rem;
+        font-size: 10rem;
     }
     .red {
         --color: #b91010;
