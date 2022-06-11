@@ -113,25 +113,41 @@
     {:else if matchInfo}
         <div class="col" style="position: absolute;">
             {#if screenWidth > 400}
-                <h1 style="margin-top: 44vh; font-size: 5rem">VS</h1>
+                <h1 style="margin-top: 10vh; font-size: 5rem">VS</h1>
                 <h1 style="font-size: 1.3rem">({matchInfo.player1.elo > matchInfo.player2.elo ? ` ${stake} / ${drawStake} / ${oppositeStake} ` : ` ${oppositeStake} / ${drawStake} / ${stake} `})</h1>
             {/if}
-            {#if adminPass}
+            <div class="col" style="justify-content: space-evenly;">
                 <div class="row">
                     <Btn onClick={async () => {
-                        await fetch(API_BASE + "/match/end", {
+                        await fetch(API_BASE + "/match/draw", {
                             method: "POST",
                             headers: {
                                 Authorization: adminPass
                             }
                         })
-                    }} customStyle="margin: {screenWidth > 400 ? 17 : 78}vh 0 0; width: {19}vw; position: relative;{screenWidth > 680 ? "" : "height: 5rem"}">
-                        {#if screenWidth > 680}
-                            <h1 style="font-size: 2rem;">END</h1>
+                    }}>
+                        {#if screenWidth > 400}
+                            <h1 style="font-size: 2rem;">DRAW</h1>
                         {/if}
                     </Btn>
                 </div>
-            {/if}
+                {#if adminPass}
+                    <div class="row">
+                        <Btn onClick={async () => {
+                            await fetch(API_BASE + "/match/end", {
+                                method: "POST",
+                                headers: {
+                                    Authorization: adminPass
+                                }
+                            })
+                        }} customStyle="margin: {screenWidth > 400 ? 17 : 78}vh 0 0; width: {19}vw; position: relative;{screenWidth > 680 ? "" : "height: 5rem"}">
+                            {#if screenWidth > 680}
+                                <h1 style="font-size: 2rem;">END</h1>
+                            {/if}
+                        </Btn>
+                    </div>
+                {/if}
+            </div>
         </div>
         <Profile pointWon={player1Light} elo={matchInfo.player1.elo} points={matchInfo.player1Points} username={matchInfo.player1.name} color="green" />
         <Profile pointWon={player2Light} elo={matchInfo.player2.elo} points={matchInfo.player2Points} username={matchInfo.player2.name} color="red" />
