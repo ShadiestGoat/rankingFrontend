@@ -116,7 +116,7 @@
                 <h1 style="margin-top: 10vh; font-size: 5rem">VS</h1>
                 <h1 style="font-size: 1.3rem">({matchInfo.player1.elo > matchInfo.player2.elo ? ` ${stake} / ${drawStake} / ${oppositeStake} ` : ` ${oppositeStake} / ${drawStake} / ${stake} `})</h1>
             {/if}
-            <div class="col" style="justify-content: space-evenly;">
+            <div class="col" style="justify-content: space-evenly; margin-top: 7vh; height: 60vh;">
                 <div class="row">
                     <Btn onClick={async () => {
                         await fetch(API_BASE + "/match/draw", {
