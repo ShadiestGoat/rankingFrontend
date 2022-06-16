@@ -117,20 +117,6 @@
                 <h1 style="font-size: 1.3rem">({matchInfo.player1.elo > matchInfo.player2.elo ? ` ${stake} / ${drawStake} / ${oppositeStake} ` : ` ${oppositeStake} / ${drawStake} / ${stake} `})</h1>
             {/if}
             <div class="col" style="justify-content: space-evenly; margin-top: 7vh; height: 60vh;">
-                <div class="row">
-                    <Btn onClick={async () => {
-                        await fetch(API_BASE + "/match/draw", {
-                            method: "POST",
-                            headers: {
-                                Authorization: adminPass
-                            }
-                        })
-                    }}>
-                        {#if screenWidth > 400}
-                            <h1 style="font-size: 2rem;">DRAW</h1>
-                        {/if}
-                    </Btn>
-                </div>
                 {#if adminPass}
                     <div class="row">
                         <Btn onClick={async () => {
@@ -140,9 +126,23 @@
                                     Authorization: adminPass
                                 }
                             })
-                        }} customStyle="margin: {screenWidth > 400 ? 17 : 78}vh 0 0; width: {19}vw; position: relative;{screenWidth > 680 ? "" : "height: 5rem"}">
+                        }} customStyle="width: 19vw;{screenWidth > 680 ? "" : "height: 5rem"}">
                             {#if screenWidth > 680}
                                 <h1 style="font-size: 2rem;">END</h1>
+                            {/if}
+                        </Btn>
+                    </div>
+                    <div class="row">
+                        <Btn onClick={async () => {
+                            await fetch(API_BASE + "/match/draw", {
+                                method: "POST",
+                                headers: {
+                                    Authorization: adminPass
+                                }
+                            })
+                        }} customStyle="margin:{screenWidth > 400 ? 17 : 78}vh 0 0">
+                            {#if screenWidth > 400}
+                                <h1 style="font-size: 2rem;">DRAW</h1>
                             {/if}
                         </Btn>
                     </div>
