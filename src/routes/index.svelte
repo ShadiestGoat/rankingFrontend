@@ -149,8 +149,8 @@
                 {/if}
             </div>
         </div>
-        <Profile pointWon={player1Light} elo={matchInfo.player1.elo} points={matchInfo.player1Points} username={matchInfo.player1.name} color="green" />
         <Profile pointWon={player2Light} elo={matchInfo.player2.elo} points={matchInfo.player2Points} username={matchInfo.player2.name} color="red" />
+        <Profile pointWon={player1Light} elo={matchInfo.player1.elo} points={matchInfo.player1Points} username={matchInfo.player1.name} color="green" />
     {:else}
         <div class="col">
             <h1 style="font-size: 4rem; margin-top: 20vh">No Match is on!</h1>
