@@ -27,6 +27,9 @@
         if (adminPass) {
             const resp = await fetch(`${API_BASE}/players`)
             players = await resp.json()
+            players.sort((a, b) => {
+                return a.elo - b.elo
+            })
         }
         
         ready = true

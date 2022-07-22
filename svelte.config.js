@@ -8,8 +8,8 @@ const config = {
 	preprocess: preprocess({
 		replace: [
 			[/process.env.ELO_K/g, parseFloat(process.env.ELO_K ?? "50")],
-			[/process.env.API_PROTCOL/g, process.env.API_PROTCOL],
-			[/process.env.API_BASE_ORIGIN/g, process.env.API_BASE_ORIGIN],
+			[/process.env.API_PROTCOL/g, process.env.API_PROTCOL ?? ""],
+			[/process.env.API_BASE_ORIGIN/g, process.env.API_BASE_ORIGIN ?? ""],
 		]
 	}),
 
@@ -18,7 +18,6 @@ const config = {
 			// default options are shown
 			pages: 'build',
 			assets: 'build',
-			fallback: null,
 			precompress: true
 		}),
 		prerender: {
